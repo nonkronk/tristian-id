@@ -73,6 +73,7 @@ const help = (args) => {
             "cat: print files",
             "clear: clear output",
             "sh: run an executable file",
+            "exit: quit the shell"
         ]}
     />
 }
@@ -83,12 +84,18 @@ const clear = (args) => {
     return;
 }
 
+const exit = (args) => {
+    window.open("about:blank", "_self");
+    window.close();
+}
+
 const actions = {
     'ls': ls,
     'cat': cat,
     'help': help,
     'sh': sh,
     'clear': clear,
+    'exit': exit,
 }
 
 export default actions;
