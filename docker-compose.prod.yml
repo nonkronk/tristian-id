@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  tristian-id:
+    container_name: tristian-id
+    image: tristian-id
+    build:
+      context: .
+      target: production
