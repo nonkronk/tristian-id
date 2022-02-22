@@ -1,19 +1,24 @@
-FROM node:lts-alpine AS development
-
-ENV NODE_ENV development
-
-# Add the work directory
+FROM node:lts-alpine as module-install-stage
+# set working directory
 WORKDIR /app
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
 
-# Cache and install dep
-COPY package.json .
-COPY package-lock.json .
-COPY yarn.lock .
-RUN npm install
-# Copy app files
+COPY package.json /app/package.json
+
+RUN apk add yarn
+RUN yarn install --production
+
+# build
+FROM node:lts-alpine as build-stage
+COPY --from=module-install-stage /app/node_modules/ /app/node_modules
+WORKDIR /app
 COPY . .
-# Build the app
-RUN npm run build
+RUN yarn build
 
-EXPOSE 3000
-CMD [ "npx", "serve", "-s", "build" ]
+# serve
+FROM node:lts-alpine
+COPY --from=build-stage /app/build/ /app/build
+RUN npm install -g serve
+# start app
+CMD serve -s /app/build -l 3000
