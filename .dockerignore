@@ -1,2 +1,3 @@
 .dockerignore
 helm_chart
+.env
