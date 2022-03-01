@@ -8,7 +8,7 @@ const k8sAtHome = () => {
 
 const resume = () => {
     const pdfWindow = window.open();
-    pdfWindow.location.href = "https://cloud.tristian.id/s/LHwz5girfZFBCdt"
+    pdfWindow.location.href = process.env.RESUME_LINK
 }
 
 // const cowsay = (args) => {
