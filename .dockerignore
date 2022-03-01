@@ -1,3 +1,4 @@
 .dockerignore
 helm_chart
-.env.eslintrc
+.env
+.eslintrc
