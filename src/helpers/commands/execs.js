@@ -1,6 +1,5 @@
 import ImageOutput from '../../components/output/ImageOutput';
-// import TxtOutput from '../../components/output/TxtOutput';
-// import RegularOutput from '../../components/output/RegularOutput';
+require('dotenv').config()
 
 const k8sAtHome = () => {
     return <ImageOutput src={process.env.PUBLIC_URL + '/k8s-at-home.gif'} alt='k8s-at-home'/>
