@@ -7,7 +7,7 @@ const k8sAtHome = () => {
 
 const resume = () => {
     const pdfWindow = window.open();
-    pdfWindow.location.href = process.env.RESUME_LINK
+    pdfWindow.location.href = process.env.REACT_APP_RESUME_LINK
 }
 
 // const cowsay = (args) => {
