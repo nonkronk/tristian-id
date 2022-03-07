@@ -15,7 +15,7 @@ export const files = {
             "Most of my projects are deployed from my homelab, including this site.",
             "It's been running 24/7 since August 2017.",
             "------", 
-            "P.S. Credits to @Aavash for sharing his work (https://news.ycombinator.com/item?id=26700770)."
+            "P.S. Credits to @Aavash for sharing his work (https://link.tristian.id/s1ZoQl)."
         ],
         type: fileType.regular,
         longView: 'r--',
