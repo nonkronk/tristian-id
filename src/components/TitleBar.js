@@ -68,7 +68,7 @@ function TitleBar() {
                 <CloseButton onClick={closeWindow}>X</CloseButton>
             </ButtonsDiv>
             <TitleDiv>
-                <a href='https://tristian.id'>tristian.id</a>
+                <a href='https://tristian.id'>tristian.id   </a>
             </TitleDiv>
             <LinksDiv>
                 <a href="https://github.com/nonkronk">

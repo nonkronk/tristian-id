@@ -6,17 +6,14 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 COPY package.json /app/package.json
 
-RUN apk add yarn
-RUN yarn install --production
+RUN npm install
 
 # build
 FROM node:lts-alpine as build-stage
 COPY --from=module-install-stage /app/node_modules/ /app/node_modules
 WORKDIR /app
 COPY . .
-ARG REACT_APP_RESUME_LINK
-ENV REACT_APP_RESUME_LINK=${REACT_APP_RESUME_LINK}
-RUN yarn build
+RUN npm run build
 
 # serve
 FROM node:lts-alpine
