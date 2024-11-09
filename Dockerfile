@@ -2,6 +2,7 @@ FROM node:lts-alpine as module-install-stage
 # set working directory
 WORKDIR /app
 # add `/app/node_modules/.bin` to $PATH
+ENV NODE_OPTIONS=--openssl-legacy-provider
 ENV PATH /app/node_modules/.bin:$PATH
 
 COPY package.json /app/package.json
